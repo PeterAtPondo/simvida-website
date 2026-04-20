@@ -123,24 +123,24 @@
       return {
         modify: { ...inputs, monthlyContribution: inputs.monthlyContribution + 1000 },
         legendLabel: 'saving R1,000 more each month',
-        heading: 'Just R1,000 more each month',
-        tail: `You'd retire at ${inputs.retirementAge} with <strong>{{income}}</strong> a month. At your age, small amounts compound into something serious.`,
+        heading: 'One small lever',
+        tail: `Save just R1,000 more each month. You'd retire at ${inputs.retirementAge} with <strong>{{income}}</strong> a month. At your age, small amounts compound into something serious.`,
       };
     }
     if (inputs.age < 55) {
       return {
         modify: { ...inputs, escalation: 0.15 },
         legendLabel: 'escalating your saving 15% a year',
-        heading: 'Escalating your saving 15% a year',
-        tail: `Bumping your annual contribution escalation from 10% to 15% means your savings grow with your career. You'd retire at ${inputs.retirementAge} with <strong>{{income}}</strong> a month.`,
+        heading: 'One small lever',
+        tail: `Escalate your saving 15% a year instead of 10%. You'd retire at ${inputs.retirementAge} with <strong>{{income}}</strong> a month. Your savings grow with your career.`,
       };
     }
     const delayedAge = Math.min(inputs.retirementAge + 1, DEFAULTS.lifeExpectancy - 1);
     return {
       modify: { ...inputs, retirementAge: delayedAge },
       legendLabel: `retiring at ${delayedAge} instead`,
-      heading: 'Just one more year of work',
-      tail: `Retire at ${delayedAge} with <strong>{{income}}</strong> a month. One more year of saving, one fewer year of drawing down.`,
+      heading: 'One small lever',
+      tail: `Work just one more year, retire at ${delayedAge} instead. You'd have <strong>{{income}}</strong> a month. One more year of saving, one fewer year of drawing down.`,
       delayedAge: delayedAge,
     };
   }
