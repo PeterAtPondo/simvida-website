@@ -189,6 +189,21 @@ section + section { border-top: 1px solid var(--brand-rule); }
   font-size: var(--fs-4xl);
   max-width: 14ch;
   margin-bottom: var(--sp-5);
+  animation: hero-reveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.hero h1 .fuzzy {
+  display: inline-block;
+  filter: blur(var(--fuzzy-blur, 2px));
+  transition: filter 200ms ease-out;
+  will-change: filter;
+}
+@keyframes hero-reveal {
+  0%   { filter: blur(8px); opacity: 0.35; }
+  100% { filter: blur(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 { animation: none; }
+  .hero h1 .fuzzy { filter: none; }
 }
 .hero-lede {
   font-size: var(--fs-md);
