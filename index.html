@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your money, finally in focus. · SimVida</title>
+  <meta name="description" content="A clear picture of your money, a plan you can trust, and help that's working alongside you. SimVida is free for you. Your advisor pays." />
+  <link rel="stylesheet" href="styles/tokens.css?v=3" />
+  <link rel="stylesheet" href="styles/base.css?v=3" />
+  <link rel="stylesheet" href="styles/wireframe.css?v=3" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="SimVida home"><img src="assets/logo.svg" alt="SimVida" /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">For you</a></li>
+          <li><a href="advisors.html">For advisors</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://app.simvida.com">Sign in</a></li>
+          <li><a href="https://app.simvida.com" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Start free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1. HERO
+         ============================================================ -->
+    <section class="hero">
+      <div class="container">
+        <h1>Your money, finally in focus.</h1>
+        <p class="hero-lede">
+          Every asset, every policy, every document, in one calm view. Shared with your advisor, in plain language. Free for you to use.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://app.simvida.com">Start free</a>
+          <a class="btn btn-ghost" href="#chart">See how you're doing →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. THE FEELING
+         ============================================================ -->
+    <section class="section-dim">
+      <div class="container max-prose">
+        <h2>You've probably had the feeling.</h2>
+        <p class="lead">
+          Retirement planning can feel overwhelming. The paperwork lives in five different inboxes. The jargon takes more energy to decode than it saves. You can never quite tell where you actually stand.
+        </p>
+        <p class="lead">
+          We've had that feeling too. So we built something different: a single view of everything you've saved, everything you're covered for, and what it all adds up to. In plain language. Alongside whoever's helping you plan.
+        </p>
+        <p class="lead">
+          That's SimVida. Quiet, clear, yours.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. HOW ARE YOU DOING? (interactive chart)
+         ============================================================ -->
+    <section id="chart">
+      <div class="container">
+        <h2>How are you doing?</h2>
+        <p class="lead">
+          Tell us a little about where you are. Move the sliders. See what small changes could do. Two minutes, no sign-up required.
+        </p>
+
+        <div class="chart-playground">
+
+          <div class="chart-controls">
+            <div class="control">
+              <label for="c-age">Your age</label>
+              <div class="control-value" id="c-age-v">42</div>
+              <input id="c-age" type="range" min="25" max="60" value="42" step="1" aria-label="Your age"/>
+            </div>
+            <div class="control">
+              <label for="c-savings">Current retirement savings</label>
+              <div class="control-value" id="c-savings-v">R1m</div>
+              <input id="c-savings" type="range" min="0" max="10000000" value="1200000" step="50000" aria-label="Current retirement savings"/>
+            </div>
+            <div class="control">
+              <label for="c-monthly">Saving each month</label>
+              <div class="control-value" id="c-monthly-v">R8k</div>
+              <input id="c-monthly" type="range" min="0" max="50000" value="8000" step="500" aria-label="Saving each month"/>
+            </div>
+            <div class="control">
+              <label for="c-retire">Want to retire at</label>
+              <div class="control-value" id="c-retire-v">65</div>
+              <input id="c-retire" type="range" min="50" max="75" value="65" step="1" aria-label="Retirement age"/>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <svg id="projection-chart" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet" aria-label="Retirement projection chart"></svg>
+          </div>
+
+          <div class="chart-result" id="chart-result"></div>
+
+          <div class="btn-row" style="justify-content: center; margin-top: var(--sp-6);">
+            <a class="btn btn-primary" href="https://app.simvida.com">See your complete picture →</a>
+            <a class="btn btn-ghost" href="#how">Or just browse the rest</a>
+          </div>
+
+          <p class="muted" style="font-size: var(--fs-sm); text-align: center; margin-top: var(--sp-5);">
+            <strong>Assumptions:</strong> 10% growth, 6% inflation, contributions escalating 10% a year, life expectancy 90. <a href="https://app.simvida.com">Sign in</a> to tune these to your situation.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. THREE PILLARS
+         ============================================================ -->
+    <section id="how">
+      <div class="container">
+        <h2>Three things SimVida does for you.</h2>
+
+        <div class="grid-3" style="margin-top: var(--sp-7);">
+
+          <article class="card">
+            <span class="pillar-num">01 · See</span>
+            <h3>Your whole picture, in one place.</h3>
+            <p>Every asset, every policy, every document. No spreadsheets. No hunting for last year's statement. No wondering what you actually own.</p>
+            <div class="placeholder" data-label="Net worth view" style="min-height: 140px; margin-top: var(--sp-4);"></div>
+          </article>
+
+          <article class="card">
+            <span class="pillar-num">02 · Know</span>
+            <h3>Whether you're on track, and what to do next.</h3>
+            <p>Retirement scenarios you can play with. "What if I contribute R2,000 more a month?" Drag a slider, see the answer.</p>
+            <div class="placeholder" data-label="Retirement projection chart" style="min-height: 140px; margin-top: var(--sp-4);"></div>
+          </article>
+
+          <article class="card">
+            <span class="pillar-num">03 · Grow</span>
+            <h3>With an advisor who's actually on your side.</h3>
+            <p>Every advisor on SimVida is vetted for transparency, fair fees, and the kind of service you deserve. You and your advisor see the same view, work on the same scenarios, and stay on the same page.</p>
+            <div class="placeholder" data-label="Client and advisor collaboration view" style="min-height: 140px; margin-top: var(--sp-4);"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. FREE FOR YOU
+         ============================================================ -->
+    <section class="section-dim">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <h2 style="font-size: var(--fs-4xl);">Nothing.</h2>
+            <p class="lead">
+              SimVida (the platform, the tools, the view of your whole picture) is free for you to use. Your advisor pays for it.
+            </p>
+            <p class="lead">
+              That's the whole point. When the tools are paid for up front rather than hidden inside your investments, they can focus entirely on helping you.
+            </p>
+          </div>
+          <div>
+            <div class="card">
+              <h4>How it works</h4>
+              <p><strong>SimVida is free for you to use.</strong> No subscription, no per-feature charges, no lock-in.</p>
+              <p><strong>Your advisor pays a seat fee</strong> to use the platform. That's how SimVida is funded.</p>
+              <p class="mb-0"><strong>What you invest, how, and who with,</strong> is up to you and your advisor. SimVida just makes it all visible, alongside everything else you own.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. ENCOURAGEMENT
+         ============================================================ -->
+    <section class="section-ink">
+      <div class="container max-prose center">
+        <h2 style="font-size: var(--fs-3xl);">There's always a next step.</h2>
+        <p class="lead" style="color: var(--brand-bg); margin: var(--sp-5) auto 0; font-size: var(--fs-md);">
+          Late start? Still possible. Mid-career? Plenty of runway left. Nearly there? Let's make sure you land well.
+        </p>
+        <p class="lead" style="color: var(--brand-bg); margin: var(--sp-4) auto 0; font-size: var(--fs-md);">
+          No guilt about the past. No lectures. Just one small change at a time, and a view of what it could do.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. LEARN
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="grid-2" style="align-items: end; margin-bottom: var(--sp-7);">
+          <div>
+            <h2>Things worth knowing, explained clearly.</h2>
+          </div>
+          <div>
+            <p class="lead" style="margin: 0;">
+              Short reads on how fees work, what helps if you're starting late, and how to find an advisor who fits you. No jargon. No scare tactics.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Fees · 6 min read</span>
+            <h3>What your fees are actually costing you.</h3>
+            <p class="muted">A 0.85% fee and a 2.5% fee sound similar. Over 20 years they're not. Here's the maths, without spin.</p>
+          </article>
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Starting late · 4 min read</span>
+            <h3>If you're behind, here's what helps.</h3>
+            <p class="muted">Nobody wants to hear "you should've started sooner." Here's what you can actually do from where you are, today, next month, next year.</p>
+          </article>
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Advisors · 5 min read</span>
+            <h3>Finding an advisor who fits you.</h3>
+            <p class="muted">Five questions worth asking. And what the answers usually tell you about fit, style, and approach.</p>
+          </article>
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Basics · 3 min read</span>
+            <h3>Living annuity vs life annuity, in plain English.</h3>
+            <p class="muted">Two words, two completely different ways to spend your retirement savings. The trade-off, in one paragraph.</p>
+          </article>
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Planning · 4 min read</span>
+            <h3>The retirement number that actually matters.</h3>
+            <p class="muted">Hint: it's probably not the one on the proposal. Here's how to work out what you'd actually need.</p>
+          </article>
+
+          <article class="card">
+            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+            <span class="pillar-num">Estate · 5 min read</span>
+            <h3>What happens to your money when you die.</h3>
+            <p class="muted">It's often not explained well. We'll walk you through the basics, gently.</p>
+          </article>
+
+        </div>
+
+        <div class="btn-row" style="justify-content: center; margin-top: var(--sp-7);">
+          <a class="btn btn-secondary" href="learn.html">Browse all articles</a>
+        </div>
+
+        <p class="muted" style="margin-top: var(--sp-4); font-size: var(--fs-sm); text-align: center;">
+          <em>Note to Peter: these titles are placeholders reflecting SimVida's soul. Swap with actual Vida content library.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. PROOF
+         ============================================================ -->
+    <section class="section-dim">
+      <div class="container">
+        <h2>Built by people who know this industry from the inside.</h2>
+        <p class="lead" style="max-width: 72ch;">
+          SimVida is a technology platform, not a financial service provider. We don't give advice. We build the tools advisors use to serve their clients, and we only let on the ones we trust. Decades of working inside the industry taught us what was missing; SimVida is us building it.
+        </p>
+
+        <div class="grid-2" style="margin-top: var(--sp-7); gap: var(--sp-7);">
+
+          <div class="team-member">
+            <div class="avatar"></div>
+            <div>
+              <div class="team-role">Founder</div>
+              <h3 style="margin: 4px 0 8px;">Eugene Maree</h3>
+              <p>25+ years in South African financial services. Standard Bank investment banking, STANLIB retail advisory, Liberty Life independent advisor division. Founded Wealthport LISP, the first independent LISP in SA to accommodate ETFs and structured products. Built SimVida to give clients and advisors the kind of tools he's always believed the industry needed.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="avatar"></div>
+            <div>
+              <div class="team-role">Co-founder</div>
+              <h3 style="margin: 4px 0 8px;">Peter Koen</h3>
+              <p>20+ years at the intersection of design, technology and business. Co-founded InfoSlips, electronic communications platform serving 65% of the JSE Top 100. Founded pondo design collective in Cape Town. Designs SimVida's product.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="avatar"></div>
+            <div>
+              <div class="team-role">Head of Operations</div>
+              <h3 style="margin: 4px 0 8px;">Fiona Butler</h3>
+              <p>12+ years in insurance (underwriting, claims, operations). BPharm and biomedical technology diploma. Former Olympic hockey player (2004, 2008). Cares deeply about insurance education and making sure clients get value.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="avatar"></div>
+            <div>
+              <div class="team-role">Project Manager</div>
+              <h3 style="margin: 4px 0 8px;">Laura Beaumont</h3>
+              <p>14+ years as a content specialist and project manager. Computing and information systems honours (Monash). Keeps the whole thing moving.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="grid-4" style="margin-top: var(--sp-10); text-align: center;">
+          <div>
+            <div class="big-stat">Vetted</div>
+            <p class="muted" style="font-size: var(--fs-sm); margin-top: var(--sp-2);">Every advisor on the platform</p>
+          </div>
+          <div>
+            <div class="big-stat">POPIA</div>
+            <p class="muted" style="font-size: var(--fs-sm); margin-top: var(--sp-2);">Your data stays yours</p>
+          </div>
+          <div>
+            <div class="big-stat">256-bit</div>
+            <p class="muted" style="font-size: var(--fs-sm); margin-top: var(--sp-2);">Bank-grade encryption</p>
+          </div>
+          <div>
+            <div class="big-stat">ZA</div>
+            <p class="muted" style="font-size: var(--fs-sm); margin-top: var(--sp-2);">Built for South African clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. FAQ
+         ============================================================ -->
+    <section id="faq">
+      <div class="container" style="max-width: 820px;">
+        <h2>The answers, plainly.</h2>
+
+        <div class="faq" style="margin-top: var(--sp-6);">
+
+          <details>
+            <summary>Is SimVida a financial advisor?</summary>
+            <div class="faq-body">
+              No. SimVida is the technology platform your advisor uses to work with you. All advice comes from real, licensed human advisors. Our job is to vet who we let onto the platform, and to build tools that make their work clearer and more transparent.
+            </div>
+          </details>
+
+          <details>
+            <summary>What does SimVida actually cost me?</summary>
+            <div class="faq-body">
+              Nothing. SimVida is free for you to use. Your advisor pays a seat fee to use the platform, and that's how SimVida is funded. What you invest, how, and where, is a separate conversation between you and your advisor.
+            </div>
+          </details>
+
+          <details>
+            <summary>What if I don't have an advisor yet?</summary>
+            <div class="faq-body">
+              We'll help you find one. Every advisor on SimVida is vetted for transparency and the kind of service you deserve. You stay in control: try, switch, leave, whenever you want.
+            </div>
+          </details>
+
+          <details>
+            <summary>Is my data safe?</summary>
+            <div class="faq-body">
+              Yes. Bank-grade encryption, POPIA-compliant. You own your data. We'll never sell it. You can export it or delete it at any time.
+            </div>
+          </details>
+
+          <details>
+            <summary>Can I leave?</summary>
+            <div class="faq-body">
+              Yes, any time, without penalty. No lock-in. Take your data with you.
+            </div>
+          </details>
+
+          <details>
+            <summary>Who's behind SimVida?</summary>
+            <div class="faq-body">
+              Eugene Maree, a 25-year veteran of SA financial services, and Peter Koen, a designer with 20 years in the industry. The full team is <a href="#">here</a>.
+            </div>
+          </details>
+
+          <details>
+            <summary>Is this a robo-advisor?</summary>
+            <div class="faq-body">
+              No. SimVida isn't an advisor at all, robo or otherwise. It's the platform your advisor uses to work with you. Every advisor on SimVida is real, human, and vetted by us before we let them on.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11. FINAL CTA
+         ============================================================ -->
+    <section>
+      <div class="container center max-prose">
+        <h2>Ready to see your complete picture?</h2>
+        <p class="lead center" style="margin: var(--sp-4) auto;">
+          Sign up takes two minutes. It's free. There's nothing to lose by looking.
+        </p>
+        <div class="btn-row" style="justify-content: center;">
+          <a class="btn btn-primary" href="https://app.simvida.com">Start free</a>
+          <a class="btn btn-secondary" href="advisors.html">I'm an advisor</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="nav-logo"><img src="assets/logo.svg" alt="SimVida" /></div>
+        <p style="margin-top: var(--sp-3); max-width: 40ch;">
+          A clearer, fairer way to see and plan your financial future.
+        </p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html">For you</a></li>
+          <li><a href="advisors.html">For advisors</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="https://app.simvida.com">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Updates</a></li>
+          <li><a href="mailto:support@simvida.com">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">PAIA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: var(--sp-6); padding-top: var(--sp-4); border-top: 1px solid var(--brand-rule);">
+      <small>© 2026 SimVida (PTY) Ltd. SimVida is a technology platform, not a financial service provider.</small>
+    </div>
+  </footer>
+
+  <div class="proto-badge" role="note" aria-label="This is a wireframe prototype">
+    Prototype · wireframe
+  </div>
+
+  <script src="assets/chart.js?v=5" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* ============================================================
+   SimVida: Brand tokens
+   Placeholder values. Swap for real SimVida brand tokens later.
+   Wireframe mode (wireframe.css) currently overrides these.
+   ============================================================ */
+
+:root {
+  /* Brand palette, PLACEHOLDERS */
+  --brand-ink:          #0f1a2e;
+  --brand-ink-soft:     #2b3a55;
+  --brand-accent:       #2f6f8f;
+  --brand-accent-soft:  #6fa0b8;
+  --brand-warn:         #c77a4b;
+  --brand-ok:           #3f8a6b;
+
+  --brand-bg:           #ffffff;
+  --brand-bg-alt:       #f6f4ef;
+  --brand-bg-dim:       #ecebe6;
+  --brand-rule:         #dcd8d0;
+
+  /* Type: Arial across the board for wireframe consistency.
+     Split tokens preserved for future swap. */
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body:    Arial, Helvetica, sans-serif;
+  --font-mono:    Arial, Helvetica, sans-serif;
+
+  /* Type scale */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   22px;
+  --fs-xl:   28px;
+  --fs-2xl:  36px;
+  --fs-3xl:  48px;
+  --fs-4xl:  64px;
+
+  /* Spacing */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  40px;
+  --sp-8:  48px;
+  --sp-10: 64px;
+  --sp-12: 96px;
+  --sp-16: 128px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* Container */
+  --container-max: 1120px;
+  --gutter: 24px;
+
+  /* Data placeholders, verified numbers from Peter TBC.
+     Used for "show the gap" section.
+     Comparison is industry-average advisor vs average SimVida advisor. */
+  --fee-simvida-tic:       "{TBC}";
+  --fee-industry-tic:      "{TBC}";
+  --fee-industry-upfront:  "{TBC}";
+  --fee-simvida-upfront:   "{TBC}";
+  --gap-rand-20yr:         "R{TBC}";
+}

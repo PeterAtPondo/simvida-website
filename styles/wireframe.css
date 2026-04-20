@@ -1,0 +1,48 @@
+/* ============================================================
+   SimVida: Wireframe mode
+   Monochrome overrides layered on top of tokens.css.
+   Goal: strip visual design so we can evaluate structure + content.
+   REMOVE THIS FILE to reveal the real brand treatment.
+   ============================================================ */
+
+:root {
+  --brand-ink:          #1b1b1b;
+  --brand-ink-soft:     #5a5a5a;
+  --brand-accent:       #3d3d3d;
+  --brand-accent-soft:  #8a8a8a;
+  --brand-warn:         #5a5a5a;
+  --brand-ok:           #5a5a5a;
+
+  --brand-bg:           #ffffff;
+  --brand-bg-alt:       #f4f2ee;
+  --brand-bg-dim:       #e8e6e1;
+  --brand-rule:         #cac7c1;
+}
+
+/* Subtle graph-paper background to reinforce "wireframe, not final" */
+body {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Flatten any accent colours to keep the monochrome feel */
+.btn-primary { background: var(--brand-ink); color: #fff; }
+.btn-primary:hover { background: #000; }
+
+/* Mark "real content to be confirmed" tokens visually */
+.tk {
+  outline: 1px dashed var(--brand-ink-soft);
+  outline-offset: 1px;
+}
+
+/* Soften images since we don't have real ones */
+.placeholder::before {
+  content: "image placeholder · " attr(data-label);
+  color: var(--brand-ink-soft);
+}
+.placeholder[data-label] { }
+.placeholder:not([data-label])::before {
+  content: "image placeholder";
+}
