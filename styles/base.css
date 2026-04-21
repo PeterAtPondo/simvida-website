@@ -820,14 +820,40 @@ a.card {
 }
 a.card h3 { color: var(--brand-ink); }
 .category-card {
+  --cat-color: #9CCA49;
   position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--cat-color) 7%, var(--brand-bg)) 0%,
+      var(--brand-bg) 55%);
+}
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--cat-color),
+    color-mix(in srgb, var(--cat-color) 55%, white));
+  border-radius: var(--r-card) var(--r-card) 0 0;
+}
+.category-card h3 {
+  color: var(--brand-ink);
+  transition: color 160ms ease;
+}
+.category-card:hover h3 {
+  color: color-mix(in srgb, var(--cat-color) 80%, black);
 }
 .category-card .count {
-  display: block;
+  display: inline-block;
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  color: var(--brand-ink-soft);
-  margin-top: var(--sp-3);
+  color: color-mix(in srgb, var(--cat-color) 75%, black);
+  background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  margin-top: var(--sp-4);
   letter-spacing: 0.02em;
 }
 .category-card::after {
@@ -836,7 +862,7 @@ a.card h3 { color: var(--brand-ink); }
   right: var(--sp-5);
   bottom: var(--sp-5);
   font-family: var(--font-mono);
-  color: var(--brand-ink-soft);
+  color: var(--cat-color);
   opacity: 0;
   transform: translateX(-4px);
   transition: opacity 160ms ease, transform 160ms ease;
@@ -845,6 +871,12 @@ a.card h3 { color: var(--brand-ink); }
   opacity: 1;
   transform: none;
 }
+
+/* Per-category colour assignments (matches eyebrow colours on category pages). */
+.grid-4 > .category-card:nth-child(1) { --cat-color: #DB624F; }
+.grid-4 > .category-card:nth-child(2) { --cat-color: #3BB1DB; }
+.grid-4 > .category-card:nth-child(3) { --cat-color: #C850AF; }
+.grid-4 > .category-card:nth-child(4) { --cat-color: #9CCA49; }
 
 /* Pillar cards: flex column so the screenshot pins to the bottom,
    giving all three cards a shared vertical alignment plane. */
