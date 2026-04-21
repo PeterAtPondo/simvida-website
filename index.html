@@ -574,30 +574,5 @@
   <script src="assets/chart.js?v=13" defer></script>
   <script src="assets/effects.js?v=13" defer></script>
 
-  <script>
-    // Hero focus interaction: cursor proximity sharpens "Your money, finally"
-    (function () {
-      const hero = document.querySelector('.hero');
-      const h1 = document.querySelector('.hero h1');
-      const fuzzy = document.querySelector('.hero h1 .fuzzy');
-      if (!hero || !fuzzy) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      hero.addEventListener('pointermove', function (e) {
-        if (e.pointerType === 'touch') return;
-        const rect = h1.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
-        // Within ~80px of centre = sharp, 400px+ = 4px blur
-        const blur = Math.max(0, Math.min(4, (dist - 80) / 80));
-        fuzzy.style.setProperty('--fuzzy-blur', blur.toFixed(1) + 'px');
-      });
-      hero.addEventListener('pointerleave', function () {
-        fuzzy.style.setProperty('--fuzzy-blur', '2px');
-      });
-    })();
-  </script>
-
 </body>
 </html>

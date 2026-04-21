@@ -172,6 +172,48 @@
     });
   }
 
+  /* ---------- Hero focus interaction ("Your money, finally" sharpens) ---------- */
+  (function () {
+    var hero = document.querySelector('.hero');
+    var h1 = hero && hero.querySelector('h1');
+    var fuzzy = hero && hero.querySelector('h1 .fuzzy');
+    if (!hero || !fuzzy) return;
+    if (prefersReduced) return;
+
+    var FOCUS_RADIUS = 260;   // within this = fully sharp
+    var BLUR_RADIUS  = 560;   // at/beyond this = max blur
+    var MAX_BLUR     = 4;
+    var REST_BLUR    = 2;
+    var locked = false;       // true while the cursor is over a CTA, the H1, or the lede
+
+    function setBlur(px) {
+      fuzzy.style.setProperty('--fuzzy-blur', px.toFixed(1) + 'px');
+    }
+
+    hero.addEventListener('pointermove', function (e) {
+      if (locked || e.pointerType === 'touch') return;
+      var rect = h1.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+      var norm = (dist - FOCUS_RADIUS) / (BLUR_RADIUS - FOCUS_RADIUS);
+      var blur = Math.max(0, Math.min(MAX_BLUR, norm * MAX_BLUR));
+      setBlur(blur);
+    });
+    hero.addEventListener('pointerleave', function () {
+      if (!locked) setBlur(REST_BLUR);
+    });
+
+    // Hover over the H1, the lede, or any CTA locks the text fully sharp.
+    var lockers = hero.querySelectorAll('h1, .hero-lede, .btn-row a, .btn');
+    lockers.forEach(function (el) {
+      el.addEventListener('pointerenter', function () { locked = true; setBlur(0); });
+      el.addEventListener('pointerleave', function () { locked = false; });
+      el.addEventListener('focus',        function () { locked = true; setBlur(0); });
+      el.addEventListener('blur',         function () { locked = false; setBlur(REST_BLUR); });
+    });
+  })();
+
   /* ---------- Contact form (mailto fallback) ---------- */
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
