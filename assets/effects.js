@@ -47,6 +47,34 @@
     });
   }
 
+  /* ---------- Article TOC (auto-generated from h2s in .article-body) ---------- */
+  var articleBody = document.querySelector('.article-body');
+  if (articleBody) {
+    var h2s = articleBody.querySelectorAll('h2');
+    if (h2s.length >= 2) {
+      var toc = document.createElement('nav');
+      toc.className = 'article-toc';
+      toc.setAttribute('aria-label', 'In this guide');
+      var label = document.createElement('span');
+      label.className = 'article-toc-label';
+      label.textContent = 'In this guide';
+      toc.appendChild(label);
+      var ol = document.createElement('ol');
+      h2s.forEach(function (h2, i) {
+        var id = h2.id || ('section-' + (i + 1));
+        h2.id = id;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = (h2.textContent || '').replace(/\.$/, '');
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+      toc.appendChild(ol);
+      articleBody.insertBefore(toc, articleBody.firstChild);
+    }
+  }
+
   /* ---------- Scroll reveals ---------- */
   root.classList.add('js-ready');
 

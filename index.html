@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your money, finally in focus. · SimVida</title>
   <meta name="description" content="A clear picture of your money, a plan you can trust, and help that's working alongside you. SimVida is free for you. Your advisor pays." />
-  <link rel="stylesheet" href="styles/tokens.css?v=11" />
-  <link rel="stylesheet" href="styles/base.css?v=11" />
-  <link rel="stylesheet" href="styles/wireframe.css?v=11" />
+  <link rel="stylesheet" href="styles/tokens.css?v=12" />
+  <link rel="stylesheet" href="styles/base.css?v=12" />
+  <link rel="stylesheet" href="styles/wireframe.css?v=12" />
 </head>
 <body>
 
@@ -46,41 +46,43 @@
         <div class="aurora-blob aurora-blob-4"></div>
       </div>
       <div class="container">
+        <span class="hero-kicker"><strong>SimVida</strong> · your whole financial life, in one view</span>
         <h1><span class="fuzzy">Your money, finally</span> <span class="sharp">in focus.</span></h1>
         <p class="hero-lede">
           Every asset, every policy, every document, in one calm view. Yours to share with an advisor, or keep to yourself. Free either way.
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://app.simvida.com">Start free</a>
-          <a class="btn btn-ghost" href="#chart">See how you're doing <span class="gradient-arrow">→</span></a>
+          <a class="btn btn-ghost" href="#chart">See your own numbers <span class="gradient-arrow">→</span></a>
         </div>
+        <div class="trust-ribbon">
+          <span>POPIA-compliant</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>Bank-grade encryption</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>Free for you</span>
+        </div>
+        <span class="platform-chip">SimVida is a technology platform, not a financial service provider.</span>
       </div>
     </section>
 
     <!-- ============================================================
-         2. THE FEELING
+         1b. STAT CALLOUT
          ============================================================ -->
-    <section class="section-dim feeling-section">
-      <div class="container">
-        <div class="feeling-inner reveal">
-          <h2 class="feeling-headline">You've probably had the feeling.</h2>
-          <p class="feeling-subhead">The one about your retirement, your savings, your policies. All the pieces of your financial life, scattered across too many places.</p>
-
-          <p class="feeling-bridge">
-            Your statements live in five different inboxes. The jargon takes more energy to decode than it saves. You can never quite tell where you actually stand.
+    <section style="padding-top: var(--sp-8); padding-bottom: var(--sp-6);">
+      <div class="container reveal">
+        <div class="stat-callout">
+          <div class="stat-big">6%</div>
+          <p class="stat-copy">
+            …of South Africans retire comfortably. SimVida is built so that figure isn't the story for you, or the people you care about.
+            <small>Source: <span class="tk">{SA_RETIREMENT_SOURCE}</span>. Broadly consistent with 10X Investments and National Treasury research on SA retirement outcomes.</small>
           </p>
-
-          <p class="feeling-bridge">
-            We've had that feeling too. So we built something different: a single view of everything you've saved, everything you're covered for, and what it all adds up to. In plain language. Alongside whoever's helping you plan.
-          </p>
-
-          <p class="feeling-resolve">Quiet. Clear. Yours.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         3. HOW ARE YOU DOING? (interactive chart)
+         2. HOW ARE YOU DOING? (interactive chart — moved up)
          ============================================================ -->
     <section id="chart">
       <div class="container reveal">
@@ -129,6 +131,28 @@
             <strong>Assumptions:</strong> 10% growth, 6% inflation, contributions escalating 10% a year, life expectancy 90. <a href="https://app.simvida.com">Sign in</a> to tune these to your situation.
           </p>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. THE FEELING (moved below chart)
+         ============================================================ -->
+    <section class="section-dim feeling-section">
+      <div class="container">
+        <div class="feeling-inner reveal">
+          <h2 class="feeling-headline">You've probably had the feeling.</h2>
+          <p class="feeling-subhead">The one about your retirement, your savings, your policies. All the pieces of your financial life, scattered across too many places.</p>
+
+          <p class="feeling-bridge">
+            Your statements live in five different inboxes. The jargon takes more energy to decode than it saves. You can never quite tell where you actually stand.
+          </p>
+
+          <p class="feeling-bridge">
+            We've had that feeling too. So we built something different: a single view of everything you've saved, everything you're covered for, and what it all adds up to. In plain language. Alongside whoever's helping you plan.
+          </p>
+
+          <p class="feeling-resolve">Quiet. Clear. Yours.</p>
         </div>
       </div>
     </section>
@@ -183,6 +207,40 @@
     </section>
 
     <!-- ============================================================
+         5b. TWO PATHS
+         ============================================================ -->
+    <section>
+      <div class="container reveal">
+        <h2 style="text-align: center; margin-bottom: var(--sp-3);"><span class="gradient-text cool">Two ways to use SimVida.</span></h2>
+        <p class="lead center" style="margin: 0 auto var(--sp-7);">
+          Free either way. Start wherever you are; move between them whenever it suits you.
+        </p>
+        <div class="paths-grid reveal-stagger">
+          <article class="path-card">
+            <span class="path-eyebrow">With an advisor</span>
+            <h3>A shared view, with whoever's helping you plan.</h3>
+            <p class="muted">Every vetted advisor on SimVida invites their clients onto the platform as part of how they work. You see exactly what they see. Scenarios you can build together. Documents in one place.</p>
+            <ul>
+              <li>Your advisor pays the seat fee to use the platform with you</li>
+              <li>You control what you share, and when</li>
+              <li>Try, switch, or leave, whenever you want</li>
+            </ul>
+          </article>
+          <article class="path-card">
+            <span class="path-eyebrow">On your own, for now</span>
+            <h3>Track your whole picture, without an advisor.</h3>
+            <p class="muted">Sign up directly and use the full view of your financial life solo. Every asset, every policy, every document, in one place. Find an advisor through SimVida later if and when you're ready.</p>
+            <ul>
+              <li>Free for you to use, no catch</li>
+              <li>Scenario tools and projections included</li>
+              <li>Every advisor you'd meet through SimVida is pre-vetted</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          6. FREE FOR YOU
          ============================================================ -->
     <section class="section-dim">
@@ -226,6 +284,23 @@
         <p class="lead" style="color: var(--brand-bg); margin: var(--sp-4) auto 0; font-size: var(--fs-md);">
           No guilt about the past. No lectures. Just one small change at a time, and a view of what it could do.
         </p>
+        <div class="btn-row" style="justify-content: center; margin-top: var(--sp-6);">
+          <a class="btn btn-primary" href="#chart">Try one small change <span class="gradient-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7b. TESTIMONIAL
+         ============================================================ -->
+    <section>
+      <div class="container reveal">
+        <blockquote class="testimonial">
+          <p class="testimonial-quote">I opened my SimVida dashboard for the first time in two years and finally knew where I actually stood. It wasn't as bad as I'd been afraid of, and it gave me one clear thing to do next.</p>
+          <footer class="testimonial-attrib">
+            <strong>Placeholder client</strong> · <span class="tk">{CLIENT_NAME}</span>, <span class="tk">{CLIENT_CONTEXT}</span>
+          </footer>
+        </blockquote>
       </div>
     </section>
 
@@ -393,7 +468,7 @@
           <details>
             <summary>What does SimVida actually cost me?</summary>
             <div class="faq-body">
-              Nothing. SimVida is free for you to use. Your advisor pays a seat fee to use the platform, and that's how SimVida is funded. What you invest, how, and where, is a separate conversation between you and your advisor.
+              Nothing, for you. SimVida is free whether you have an advisor or not. If you do, they typically pay a seat fee to work with you on the platform. If you don't, you sign up directly and use it solo. What you invest, how, and where, stays between you (and your advisor, if you have one).
             </div>
           </details>
 
@@ -446,8 +521,15 @@
           Sign up takes two minutes. It's free. There's nothing to lose by looking.
         </p>
         <div class="btn-row" style="justify-content: center;">
-          <a class="btn btn-primary" href="https://app.simvida.com">Start free</a>
+          <a class="btn btn-primary" href="https://app.simvida.com">Try it, nothing to lose</a>
           <a class="btn btn-secondary" href="advisors.html">I'm an advisor</a>
+        </div>
+        <div class="trust-ribbon">
+          <span>POPIA-compliant</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>Bank-grade encryption</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>You own your data</span>
         </div>
       </div>
     </section>
@@ -500,8 +582,8 @@
     Prototype · wireframe
   </div>
 
-  <script src="assets/chart.js?v=11" defer></script>
-  <script src="assets/effects.js?v=11" defer></script>
+  <script src="assets/chart.js?v=12" defer></script>
+  <script src="assets/effects.js?v=12" defer></script>
 
   <script>
     // Hero focus interaction: cursor proximity sharpens "Your money, finally"

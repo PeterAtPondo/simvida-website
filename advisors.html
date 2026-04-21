@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SimVida for advisors: run a better practice, give clients better outcomes</title>
   <meta name="description" content="The platform that handles the admin, visibility, and collaboration, so you can focus on the work you got into this job to do." />
-  <link rel="stylesheet" href="styles/tokens.css?v=11" />
-  <link rel="stylesheet" href="styles/base.css?v=11" />
-  <link rel="stylesheet" href="styles/wireframe.css?v=11" />
+  <link rel="stylesheet" href="styles/tokens.css?v=12" />
+  <link rel="stylesheet" href="styles/base.css?v=12" />
+  <link rel="stylesheet" href="styles/wireframe.css?v=12" />
 </head>
 <body>
 
@@ -43,13 +43,21 @@
         <div class="aurora-blob aurora-blob-4"></div>
       </div>
       <div class="container">
-        <h1>Run a better practice. <span class="gradient-text cool">Give clients better outcomes.</span></h1>
+        <span class="hero-kicker"><strong>SimVida</strong> · for advisors and advisory practices</span>
+        <h1>Spend your week <span class="gradient-text cool">advising, not chasing paperwork.</span></h1>
         <p class="hero-lede">
-          SimVida handles the admin, the visibility, and the collaboration, so you can spend your week doing what you're good at: helping people make better decisions about their money.
+          SimVida handles the admin, the visibility, and the collaboration, so you can spend your week doing what you're good at: helping clients make better decisions about their money.
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://calendly.com/simvida">Request a 30-min demo</a>
-          <a class="btn btn-ghost" href="#features">See what's inside <span class="gradient-arrow">→</span></a>
+          <a class="btn btn-ghost" href="#pricing">See pricing <span class="gradient-arrow">→</span></a>
+        </div>
+        <div class="trust-ribbon">
+          <span>POPIA-compliant</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>You stay the FSCA-licensed entity</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>30-day free trial after your demo</span>
         </div>
       </div>
     </section>
@@ -114,6 +122,32 @@
             </button>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3b. PRICING (moved up — advisors want to qualify in/out fast)
+         ============================================================ -->
+    <section id="pricing">
+      <div class="container">
+        <div class="grid-2 reveal" style="align-items: start;">
+          <div>
+            <h2>You pay for the platform. Your clients don't.</h2>
+            <p class="lead">
+              SimVida is free for your clients. That's important to us, and it's important to them. Advisors pay per seat, with practice-level plans for larger firms.
+            </p>
+            <p class="lead">
+              Because the platform is paid for up front rather than embedded inside product commissions, your clients can see clearly what you're doing and why. Transparency is good for trust, and trust is good for long-term relationships.
+            </p>
+          </div>
+          <div class="card" style="background: rgba(255,255,255,0.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid rgba(255,255,255,0.7); box-shadow: var(--shadow-lg);">
+            <h4>Pricing</h4>
+            <p><strong>Per advisor</strong> · <span class="tk">{PRICING_PER_SEAT}</span> / month</p>
+            <p><strong>Practice plan</strong> · <span class="tk">{PRICING_PRACTICE}</span> / month. Includes branches, assistants, advanced analytics.</p>
+            <p><strong>Enterprise</strong> · custom pricing for large firms with dedicated support.</p>
+            <p class="mb-0"><small class="muted">Annual discounts available. Free 30-day trial after your demo.</small></p>
+          </div>
         </div>
       </div>
     </section>
@@ -196,32 +230,6 @@
         <p class="lead" style="color: var(--brand-bg); margin: var(--sp-4) auto 0; font-size: var(--fs-md);">
           In development. Your feedback shapes what ships first.
         </p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8. BUSINESS MODEL
-         ============================================================ -->
-    <section>
-      <div class="container">
-        <div class="grid-2 reveal" style="align-items: start;">
-          <div>
-            <h2>You pay for the platform. Your clients don't.</h2>
-            <p class="lead">
-              SimVida is free for your clients. That's important to us, and it's important to them. Advisors pay per seat, with practice-level plans for larger firms.
-            </p>
-            <p class="lead">
-              Because the platform is paid for up front rather than embedded inside product commissions, your clients can see clearly what you're doing and why. Transparency is good for trust, and trust is good for long-term relationships.
-            </p>
-          </div>
-          <div class="card" style="background: rgba(255,255,255,0.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid rgba(255,255,255,0.7); box-shadow: var(--shadow-lg);">
-            <h4>Pricing</h4>
-            <p><strong>Per advisor</strong> · <span class="tk">{PRICING_PER_SEAT}</span> / month</p>
-            <p><strong>Practice plan</strong> · <span class="tk">{PRICING_PRACTICE}</span> / month. Includes branches, assistants, advanced analytics.</p>
-            <p><strong>Enterprise</strong> · custom pricing for large firms with dedicated support.</p>
-            <p class="mb-0"><small class="muted">Annual discounts available. Free 30-day trial after your demo.</small></p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -372,7 +380,7 @@
 
   <div class="proto-badge">Prototype · wireframe</div>
 
-  <script src="assets/effects.js?v=11" defer></script>
+  <script src="assets/effects.js?v=12" defer></script>
 
 </body>
 </html>
