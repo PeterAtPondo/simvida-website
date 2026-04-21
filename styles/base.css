@@ -1254,6 +1254,16 @@ body.lightbox-open { overflow: hidden; }
   border-radius: var(--r-md);
   box-shadow: var(--shadow-sm);
 }
+.stat-callout .stat-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--brand-ink-soft);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  margin-bottom: 4px;
+  line-height: 1;
+}
 .stat-callout .stat-big {
   font-family: var(--font-display);
   font-size: var(--fs-4xl);
