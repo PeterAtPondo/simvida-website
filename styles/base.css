@@ -482,9 +482,10 @@ section + section { border-top: 1px solid var(--brand-rule); }
 }
 .hero-lede {
   font-size: var(--fs-md);
-  color: var(--brand-ink-soft);
+  color: var(--brand-ink);
   max-width: 52ch;
   margin-bottom: var(--sp-6);
+  font-weight: 500;
 }
 
 @media (max-width: 820px) {
