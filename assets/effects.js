@@ -47,6 +47,81 @@
     });
   }
 
+  /* ---------- Cookie consent banner ---------- */
+  (function () {
+    var STORAGE_KEY = 'simvida-cookie-consent';
+    var banner = null;
+
+    function getConsent() {
+      try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    }
+    function setConsent(v) {
+      try { localStorage.setItem(STORAGE_KEY, v); } catch (e) {}
+    }
+
+    function build() {
+      if (banner) return banner;
+      banner = document.createElement('aside');
+      banner.className = 'cookie-banner';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-label', 'Cookie preferences');
+      banner.setAttribute('aria-live', 'polite');
+      banner.innerHTML =
+        '<div class="cookie-banner-inner">' +
+          '<div class="cookie-banner-body">' +
+            '<strong>We use cookies, carefully.</strong>' +
+            '<p>Essentials keep the site working. Analytics help us make it better. Nothing else without your say-so.</p>' +
+            '<p class="cookie-meta"><a href="privacy.html">Read the policy</a></p>' +
+          '</div>' +
+          '<div class="cookie-banner-actions">' +
+            '<button type="button" class="btn btn-ghost cookie-reject">Essential only</button>' +
+            '<button type="button" class="btn btn-primary cookie-accept">Accept all</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(banner);
+      banner.querySelector('.cookie-accept').addEventListener('click', function () {
+        setConsent('all'); hide();
+      });
+      banner.querySelector('.cookie-reject').addEventListener('click', function () {
+        setConsent('essential'); hide();
+      });
+      return banner;
+    }
+
+    function show() {
+      build();
+      requestAnimationFrame(function () { banner.classList.add('is-open'); });
+    }
+    function hide() { if (banner) banner.classList.remove('is-open'); }
+
+    if (!getConsent()) {
+      setTimeout(show, 900);
+    }
+
+    // Allow re-opening from a [data-cookie-prefs] link anywhere on the page.
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('[data-cookie-prefs]');
+      if (link) {
+        e.preventDefault();
+        show();
+      }
+    });
+
+    // Inject "Cookie preferences" into every footer's Legal column.
+    document.querySelectorAll('.footer h4').forEach(function (h4) {
+      if ((h4.textContent || '').trim() !== 'Legal') return;
+      var ul = h4.parentElement.querySelector('ul');
+      if (!ul || ul.querySelector('[data-cookie-prefs]')) return;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#';
+      a.setAttribute('data-cookie-prefs', '');
+      a.textContent = 'Cookie preferences';
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })();
+
   /* ---------- Article TOC (auto-generated from h2s in .article-body) ---------- */
   var articleBody = document.querySelector('.article-body');
   if (articleBody) {
