@@ -1,28 +1,52 @@
 /* ============================================================
-   SimVida: Brand tokens
-   Placeholder values. Swap for real SimVida brand tokens later.
-   Wireframe mode (wireframe.css) currently overrides these.
+   SimVida: Brand tokens (high-fi)
+   Sourced from simvida-ui/src/tokens/tokens.css.
+   Variable names kept backwards-compatible with base.css.
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 :root {
-  /* Brand palette, PLACEHOLDERS */
-  --brand-ink:          #0f1a2e;
-  --brand-ink-soft:     #2b3a55;
-  --brand-accent:       #2f6f8f;
-  --brand-accent-soft:  #6fa0b8;
-  --brand-warn:         #c77a4b;
-  --brand-ok:           #3f8a6b;
+  /* ---- Brand primary (logo green) ---- */
+  --brand-primary:          #9CCA49;
+  --brand-primary-hover:    #8BB83E;
+  --brand-primary-active:   #7DA635;
+  --brand-primary-disabled: #CEDFB0;
 
+  /* Legacy names used by base.css */
+  --brand-ink:          #4A4A4A;
+  --brand-ink-soft:     #6b6b6b;
+  --brand-accent:       #9CCA49;
+  --brand-accent-soft:  #CEDFB0;
+  --brand-warn:         #DB624F;
+  --brand-ok:           #9CCA49;
+
+  /* Surfaces */
   --brand-bg:           #ffffff;
-  --brand-bg-alt:       #f6f4ef;
-  --brand-bg-dim:       #ecebe6;
-  --brand-rule:         #dcd8d0;
+  --brand-bg-alt:       #F8F8F8;
+  --brand-bg-dim:       #F0F0F0;
+  --brand-rule:         #DBDBDB;
 
-  /* Type: Arial across the board for wireframe consistency.
-     Split tokens preserved for future swap. */
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-body:    Arial, Helvetica, sans-serif;
-  --font-mono:    Arial, Helvetica, sans-serif;
+  /* Feedback hues */
+  --brand-error:        #DB624F;
+  --brand-error-bg:     #FDF2F0;
+  --brand-success:      #9CCA49;
+  --brand-success-bg:   #F4F9EC;
+  --brand-warning:      #F6C357;
+  --brand-warning-bg:   #FEF9EE;
+  --brand-info:         #3BB1DB;
+  --brand-info-bg:      #EDF7FC;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+
+  /* Type */
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:    'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Type scale */
   --fs-xs:   12px;
@@ -49,22 +73,15 @@
   --sp-16: 128px;
 
   /* Radius */
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 16px;
-  --r-xl: 24px;
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   16px;
+  --r-xl:   24px;
   --r-pill: 999px;
+  --r-card: 20px;   /* SimVida card radius */
+  --r-btn:  4px;    /* SimVida button radius */
 
   /* Container */
   --container-max: 1120px;
   --gutter: 24px;
-
-  /* Data placeholders, verified numbers from Peter TBC.
-     Used for "show the gap" section.
-     Comparison is industry-average advisor vs average SimVida advisor. */
-  --fee-simvida-tic:       "{TBC}";
-  --fee-industry-tic:      "{TBC}";
-  --fee-industry-upfront:  "{TBC}";
-  --fee-simvida-upfront:   "{TBC}";
-  --gap-rand-20yr:         "R{TBC}";
 }

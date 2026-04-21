@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SimVida · Learn: plain-language guides to your money</title>
-  <link rel="stylesheet" href="styles/tokens.css?v=7" />
-  <link rel="stylesheet" href="styles/base.css?v=7" />
-  <link rel="stylesheet" href="styles/wireframe.css?v=7" />
+  <link rel="stylesheet" href="styles/tokens.css?v=11" />
+  <link rel="stylesheet" href="styles/base.css?v=11" />
+  <link rel="stylesheet" href="styles/wireframe.css?v=11" />
 </head>
 <body>
 
@@ -18,7 +18,9 @@
           <li><a href="index.html">For you</a></li>
           <li><a href="advisors.html">For advisors</a></li>
           <li><a href="learn.html" class="active">Learn</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="story.html">Our story</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="https://app.simvida.com">Sign in</a></li>
           <li><a href="https://app.simvida.com" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Start free</a></li>
         </ul>
@@ -29,8 +31,15 @@
   <main>
 
     <section class="hero">
+      <div class="hero-bg" style="background-image: url('assets/img/backgrounds/background-3.jpg');" aria-hidden="true"></div>
+      <div class="hero-aurora" aria-hidden="true">
+        <div class="aurora-blob aurora-blob-1"></div>
+        <div class="aurora-blob aurora-blob-2"></div>
+        <div class="aurora-blob aurora-blob-3"></div>
+        <div class="aurora-blob aurora-blob-4"></div>
+      </div>
       <div class="container max-prose">
-        <h1>Your money, explained without the jargon.</h1>
+        <h1>Your money, <span class="gradient-text">explained without the jargon.</span></h1>
         <p class="hero-lede">
           Short, plain-language guides. No jargon, no scare tactics, just the stuff worth knowing about your money.
         </p>
@@ -39,83 +48,99 @@
 
     <section class="section-dim">
       <div class="container">
-        <div class="grid-4" style="margin-top: var(--sp-5);">
-          <div class="card"><h3 style="margin:0;">Fees</h3><p class="muted mb-0" style="font-size:var(--fs-sm);">What you're paying, why it matters</p></div>
-          <div class="card"><h3 style="margin:0;">Retirement basics</h3><p class="muted mb-0" style="font-size:var(--fs-sm);">Annuities · tax · withdrawals</p></div>
-          <div class="card"><h3 style="margin:0;">Starting late</h3><p class="muted mb-0" style="font-size:var(--fs-sm);">What still helps, and how much</p></div>
-          <div class="card"><h3 style="margin:0;">Choosing help</h3><p class="muted mb-0" style="font-size:var(--fs-sm);">Finding the right advisor, knowing the right questions</p></div>
+        <div class="grid-4 reveal-stagger" style="margin-top: var(--sp-5);">
+          <a class="card category-card" href="learn-fees.html">
+            <h3 style="margin:0;">Fees</h3>
+            <p class="muted mb-0" style="font-size:var(--fs-sm); margin-top: var(--sp-2);">What you're paying, why it matters.</p>
+            <span class="count">5 guides</span>
+          </a>
+          <a class="card category-card" href="learn-retirement-basics.html">
+            <h3 style="margin:0;">Retirement basics</h3>
+            <p class="muted mb-0" style="font-size:var(--fs-sm); margin-top: var(--sp-2);">Annuities, tax, withdrawals, estate.</p>
+            <span class="count">7 guides</span>
+          </a>
+          <a class="card category-card" href="learn-starting-late.html">
+            <h3 style="margin:0;">Starting late</h3>
+            <p class="muted mb-0" style="font-size:var(--fs-sm); margin-top: var(--sp-2);">What still helps, and how much.</p>
+            <span class="count">4 guides</span>
+          </a>
+          <a class="card category-card" href="learn-choosing-help.html">
+            <h3 style="margin:0;">Choosing help</h3>
+            <p class="muted mb-0" style="font-size:var(--fs-sm); margin-top: var(--sp-2);">Finding the right advisor, knowing what to ask.</p>
+            <span class="count">5 guides</span>
+          </a>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2>All articles</h2>
+        <h2 class="reveal"><span class="gradient-text cool">All articles</span></h2>
 
-        <div class="grid-3" style="margin-top: var(--sp-6);">
+        <div class="grid-3 reveal-stagger" style="margin-top: var(--sp-6);">
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-fee-cost.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-1.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Fees · 6 min</span>
             <h3>What your fees are actually costing you.</h3>
             <p class="muted mb-0">A 0.85% fee and a 2.5% fee sound similar. Over 20 years they're not.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-behind.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-2.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Starting late · 4 min</span>
             <h3>If you're behind, here's what helps.</h3>
             <p class="muted mb-0">Nobody wants to hear "you should've started sooner." Here's what you can actually do.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-advisor-fit.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-3.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Advisors · 5 min</span>
             <h3>Finding an advisor who fits you.</h3>
             <p class="muted mb-0">Five questions worth asking, and what the answers usually tell you.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-annuity-types.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-4.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Basics · 3 min</span>
             <h3>Living annuity vs life annuity.</h3>
             <p class="muted mb-0">Two words, two completely different retirements.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-retirement-number.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-5.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Planning · 4 min</span>
             <h3>The retirement number that actually matters.</h3>
             <p class="muted mb-0">Hint: it's probably not the one on the proposal.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-estate.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-1.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Estate · 5 min</span>
             <h3>What happens to your money when you die.</h3>
             <p class="muted mb-0">It's often not explained well. We'll walk you through it, gently.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-tfsa-ra.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-2.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Tax · 4 min</span>
             <h3>TFSA, RA, or both?</h3>
             <p class="muted mb-0">The right mix depends on three things. Here they are.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-life-cover.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-3.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Cover · 3 min</span>
             <h3>Life cover you probably don't need.</h3>
             <p class="muted mb-0">And the two kinds you almost certainly do.</p>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="placeholder" data-label="Article image" style="min-height: 120px; margin-bottom: var(--sp-4);"></div>
+          <a class="card" href="article-pulled-out.html">
+            <div class="article-thumb" style="background-image: url('assets/img/backgrounds/background-4.jpg');" aria-hidden="true"></div>
             <span class="pillar-num">Behaviour · 4 min</span>
             <h3>Why you pulled out at the worst moment.</h3>
             <p class="muted mb-0">And how to set yourself up so next time you don't.</p>
-          </article>
+          </a>
 
         </div>
 
@@ -126,8 +151,8 @@
     </section>
 
     <section class="section-dim">
-      <div class="container center max-prose">
-        <h2>Have a question we haven't answered?</h2>
+      <div class="container center max-prose reveal">
+        <h2><span class="gradient-text warm">Have a question we haven't answered?</span></h2>
         <p class="lead center" style="margin: var(--sp-4) auto;">
           Sign up for SimVida and ask away. Every advisor on the platform is vetted for transparency, fair fees, and the kind of service you deserve. Free to get started.
         </p>
@@ -156,17 +181,17 @@
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#">Our story</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="mailto:support@simvida.com">Contact</a></li>
+          <li><a href="story.html">Our story</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h4>Legal</h4>
         <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">PAIA</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="paia.html">PAIA</a></li>
         </ul>
       </div>
     </div>
@@ -176,6 +201,8 @@
   </footer>
 
   <div class="proto-badge">Prototype · wireframe</div>
+
+  <script src="assets/effects.js?v=11" defer></script>
 
 </body>
 </html>

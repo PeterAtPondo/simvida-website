@@ -1,48 +1,49 @@
 /* ============================================================
-   SimVida: Wireframe mode
-   Monochrome overrides layered on top of tokens.css.
-   Goal: strip visual design so we can evaluate structure + content.
-   REMOVE THIS FILE to reveal the real brand treatment.
+   Wireframe overlay, currently DISABLED for high-fi preview.
+
+   To restore the monochrome wireframe look:
+   - Graph-paper body background
+   - Monochrome brand-* overrides
+   - .tk dashed outlines around placeholder tokens
+   - "image placeholder · ..." ::before on .placeholder blocks
+   - Prototype badge
+
+   Those rules have been removed from this file. Re-add them here
+   (or keep them in git history, commit 8f82430) to go back.
    ============================================================ */
 
-:root {
-  --brand-ink:          #1b1b1b;
-  --brand-ink-soft:     #5a5a5a;
-  --brand-accent:       #3d3d3d;
-  --brand-accent-soft:  #8a8a8a;
-  --brand-warn:         #5a5a5a;
-  --brand-ok:           #5a5a5a;
+/* Hide the prototype badge in high-fi mode. */
+.proto-badge { display: none; }
 
-  --brand-bg:           #ffffff;
-  --brand-bg-alt:       #f4f2ee;
-  --brand-bg-dim:       #e8e6e1;
-  --brand-rule:         #cac7c1;
+/* Treat placeholder boxes as neutral surfaces (no dashed border,
+   no "image placeholder" prefix) while we wait for real imagery. */
+.placeholder {
+  background: var(--brand-bg-alt);
+  border: 1px solid var(--brand-rule);
+  color: transparent;
 }
-
-/* Subtle graph-paper background to reinforce "wireframe, not final" */
-body {
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Flatten any accent colours to keep the monochrome feel */
-.btn-primary { background: var(--brand-ink); color: #fff; }
-.btn-primary:hover { background: #000; }
-
-/* Mark "real content to be confirmed" tokens visually */
-.tk {
-  outline: 1px dashed var(--brand-ink-soft);
-  outline-offset: 1px;
-}
-
-/* Soften images since we don't have real ones */
-.placeholder::before {
-  content: "image placeholder · " attr(data-label);
+.placeholder::before { content: none; }
+.placeholder[data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  font-size: 10px;
   color: var(--brand-ink-soft);
+  opacity: 0.35;
+  letter-spacing: 0.02em;
 }
-.placeholder[data-label] { }
-.placeholder:not([data-label])::before {
-  content: "image placeholder";
+.placeholder { position: relative; }
+
+/* {TOKEN} placeholders as soft warning chips — still flag them as TBC
+   without the loud dashed-outline wireframe treatment. */
+.tk {
+  outline: none;
+  background: rgba(246, 195, 87, 0.16);
+  color: #8B5A08;
+  padding: 1px 7px;
+  border-radius: var(--r-sm);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.92em;
 }

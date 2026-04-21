@@ -1,0 +1,154 @@
+/* SimVida site effects: scroll-triggered reveals + screenshot lightbox.
+   Degrades cleanly without JS (content is visible by default; reveal
+   classes start hidden so we guard on a root class that JS sets). */
+
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Mobile nav toggle ---------- */
+  var navInner = document.querySelector('.nav .nav-inner');
+  var navEl = navInner && navInner.querySelector('nav');
+  if (navInner && navEl) {
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'nav-primary');
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    navEl.setAttribute('id', 'nav-primary');
+    navInner.insertBefore(toggle, navEl);
+
+    function closeNav() {
+      navEl.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !navEl.classList.contains('is-open');
+      navEl.classList.toggle('is-open', open);
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    navEl.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeNav);
+    });
+    document.addEventListener('click', function (e) {
+      if (!navEl.contains(e.target) && !toggle.contains(e.target)) closeNav();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navEl.classList.contains('is-open')) closeNav();
+    });
+  }
+
+  /* ---------- Scroll reveals ---------- */
+  root.classList.add('js-ready');
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  /* ---------- Contact form (mailto fallback) ---------- */
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    var routeMap = {
+      General: 'support', Support: 'support', Advisor: 'support',
+      Privacy: 'privacy', Security: 'security', Press: 'press',
+      Partnership: 'support'
+    };
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = contactForm.querySelector('#f-name').value.trim();
+      var email = contactForm.querySelector('#f-email').value.trim();
+      var reason = contactForm.querySelector('#f-reason').value;
+      var message = contactForm.querySelector('#f-message').value.trim();
+      if (!name || !email || !message) {
+        contactForm.querySelectorAll('[required]').forEach(function (el) {
+          if (!el.value.trim()) el.focus();
+        });
+        return;
+      }
+      var routeTo = (routeMap[reason] || 'support') + '@simvida.com';
+      var subject = '[' + reason + '] message from ' + name;
+      var body = message + '\n\n—\nFrom: ' + name + ' <' + email + '>';
+      var href = 'mailto:' + routeTo + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = href;
+      var success = document.getElementById('contact-success');
+      if (success) success.classList.add('is-shown');
+    });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var triggers = document.querySelectorAll('[data-lightbox]');
+  if (!triggers.length) return;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close">\u00d7</button>' +
+    '<img alt="" />';
+  document.body.appendChild(overlay);
+
+  var overlayImg = overlay.querySelector('img');
+  var closeBtn = overlay.querySelector('.lightbox-close');
+  var lastTrigger = null;
+
+  function open(src, alt, trigger) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || '';
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    lastTrigger = trigger || null;
+    setTimeout(function () { closeBtn.focus(); }, 0);
+  }
+  function close() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
+    lastTrigger = null;
+  }
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var src = trigger.getAttribute('data-lightbox');
+      var innerImg = trigger.querySelector('img');
+      var alt = innerImg ? innerImg.alt : '';
+      open(src, alt, trigger);
+    });
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+  });
+})();

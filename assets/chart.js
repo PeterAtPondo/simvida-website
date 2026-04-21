@@ -240,12 +240,12 @@
     const tail = lever.tail.replace('{{income}}', formatRand(improved.monthlyIncome));
     resultEl.innerHTML = `
       <p class="lead" style="margin-bottom: var(--sp-3);">
-        <strong>On your current path:</strong>
+        <strong class="result-label-current">On your current path:</strong>
         retire at ${inputs.retirementAge} with about <strong>${formatRand(current.monthlyIncome)}</strong> a month, in today's money.
       </p>
       <p class="lead" style="margin-bottom: 0;">
-        <strong>${lever.heading}:</strong>
-        ${tail} That's ${formatRand(diff)} more, every month of the rest of your life.
+        <strong class="result-label-lever">${lever.heading}:</strong>
+        ${tail} That's <strong class="diff-highlight">${formatRand(diff)}</strong> more, every month of the rest of your life.
       </p>
     `;
   }

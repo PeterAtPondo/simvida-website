@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact · SimVida</title>
+  <meta name="description" content="Get in touch with the SimVida team." />
+  <link rel="stylesheet" href="styles/tokens.css?v=11" />
+  <link rel="stylesheet" href="styles/base.css?v=11" />
+  <link rel="stylesheet" href="styles/wireframe.css?v=11" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="SimVida home"><img src="assets/logo.svg" alt="SimVida" /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">For you</a></li>
+          <li><a href="advisors.html">For advisors</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="story.html">Our story</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="https://app.simvida.com">Sign in</a></li>
+          <li><a href="https://app.simvida.com" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Start free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-bg" style="background-image: url('assets/img/backgrounds/background-1.jpg');" aria-hidden="true"></div>
+      <div class="hero-aurora" aria-hidden="true">
+        <div class="aurora-blob aurora-blob-1"></div>
+        <div class="aurora-blob aurora-blob-2"></div>
+        <div class="aurora-blob aurora-blob-3"></div>
+        <div class="aurora-blob aurora-blob-4"></div>
+      </div>
+      <div class="container max-prose">
+        <h1>Get in touch. <span class="gradient-text cool">One of us reads every message.</span></h1>
+        <p class="hero-lede">
+          We're a small, senior team in South Africa. No call centre, no ticket triage, just people who know the product answering the questions that come in.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="contact-grid reveal">
+
+          <!-- FORM -->
+          <form id="contact-form" class="form-grid" novalidate>
+            <h2 style="margin-bottom: var(--sp-2);">Send us a message.</h2>
+            <p class="muted" style="margin-top: 0;">We aim to reply within one working day.</p>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="f-name">Your name</label>
+                <input class="form-input" type="text" id="f-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="f-email">Email</label>
+                <input class="form-input" type="email" id="f-email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="f-reason">What's this about?</label>
+              <select class="form-select" id="f-reason" name="reason">
+                <option value="General">General enquiry</option>
+                <option value="Support">I'm a client, I need help</option>
+                <option value="Advisor">I'm an advisor, I'd like a demo</option>
+                <option value="Privacy">Privacy or data request</option>
+                <option value="Security">Security report</option>
+                <option value="Press">Press or media</option>
+                <option value="Partnership">Partnership or integration</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="f-message">Your message</label>
+              <textarea class="form-textarea" id="f-message" name="message" required placeholder="A few sentences is plenty. We'll come back with anything we need."></textarea>
+            </div>
+
+            <p class="form-help">
+              By sending this you agree to our <a href="privacy.html">Privacy policy</a>. We won't share your details with anyone.
+            </p>
+
+            <div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </div>
+
+            <div class="form-success" id="contact-success" role="status" aria-live="polite">
+              Thanks, that's opening your email app now. If nothing happens, write to <a href="mailto:support@simvida.com">support@simvida.com</a>.
+            </div>
+          </form>
+
+          <!-- DETAILS -->
+          <aside class="contact-details">
+            <div class="detail-block">
+              <h3>Where we are</h3>
+              <p class="muted mb-0">
+                SimVida (PTY) Ltd<br />
+                <span class="tk">{OFFICE_ADDRESS_LINE_1}</span><br />
+                <span class="tk">{OFFICE_ADDRESS_LINE_2}</span><br />
+                <span class="tk">{OFFICE_CITY}</span>, South Africa
+              </p>
+            </div>
+
+            <div class="detail-block">
+              <h3>Office hours</h3>
+              <p class="muted mb-0">
+                Monday to Friday, 08:00 – 17:00 SAST.<br />
+                We read email outside office hours too, but don't always reply on weekends.
+              </p>
+            </div>
+
+            <div class="detail-block">
+              <h3>Email, by topic</h3>
+              <p class="mb-0" style="line-height: 1.9;">
+                General · <a href="mailto:support@simvida.com">support@simvida.com</a><br />
+                Privacy · <a href="mailto:privacy@simvida.com">privacy@simvida.com</a><br />
+                Security · <a href="mailto:security@simvida.com">security@simvida.com</a><br />
+                Press · <a href="mailto:press@simvida.com">press@simvida.com</a><br />
+                Advisors · <a href="https://calendly.com/simvida">Book a demo</a>
+              </p>
+            </div>
+
+            <div class="detail-block">
+              <h3>Phone</h3>
+              <p class="muted mb-0">
+                <span class="tk">{PHONE_NUMBER}</span><br />
+                Office hours only. For urgent security concerns, email <a href="mailto:security@simvida.com">security@simvida.com</a> any time.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-dim">
+      <div class="container reveal">
+        <h2 class="center"><span class="gradient-text">Quick answers.</span></h2>
+        <p class="lead center" style="margin: var(--sp-3) auto var(--sp-7); max-width: 64ch;">
+          Before you write, the pages below often answer the common ones faster.
+        </p>
+
+        <div class="grid-3 reveal-stagger">
+
+          <article class="card">
+            <span class="pillar-num">I'm a client</span>
+            <h3>"How do I sign up?"</h3>
+            <p>Two minutes, no credit card. Start on the homepage and the platform walks you through it.</p>
+            <p class="mb-0"><a href="index.html">For you →</a></p>
+          </article>
+
+          <article class="card">
+            <span class="pillar-num">I'm an advisor</span>
+            <h3>"Can I see it properly?"</h3>
+            <p>Book a 30-minute demo. We use your own practice structure, no slide deck, just the product and your questions.</p>
+            <p class="mb-0"><a href="https://calendly.com/simvida">Book a demo →</a></p>
+          </article>
+
+          <article class="card">
+            <span class="pillar-num">I'm worried about my data</span>
+            <h3>"What do you do with it?"</h3>
+            <p>Short version: you own it, we don't sell it, we share it only where you've asked us to. Full detail on the Privacy page.</p>
+            <p class="mb-0"><a href="privacy.html">Privacy policy →</a></p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="nav-logo"><img src="assets/logo.svg" alt="SimVida" /></div>
+        <p style="margin-top: var(--sp-3); max-width: 40ch;">A clearer, fairer way to see and plan your financial future.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html">For you</a></li>
+          <li><a href="advisors.html">For advisors</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="https://app.simvida.com">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="story.html">Our story</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="paia.html">PAIA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: var(--sp-6); padding-top: var(--sp-4); border-top: 1px solid var(--brand-rule);">
+      <small>© 2026 SimVida (PTY) Ltd. SimVida is a technology platform, not a financial service provider.</small>
+    </div>
+  </footer>
+
+  <div class="proto-badge">Prototype · wireframe</div>
+
+  <script src="assets/effects.js?v=11" defer></script>
+
+</body>
+</html>
